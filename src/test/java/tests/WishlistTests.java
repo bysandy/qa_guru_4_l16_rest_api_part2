@@ -13,8 +13,8 @@ import static utils.FileUtils.readStringFromFile;
 public class WishlistTests extends TestBase{
 
     @Test
-    @DisplayName("")
-    void successLoginWithDataInFileTest() {
+    @DisplayName("Add item to the Shopping List")
+    void successItemAddedToShoppigListTest() {
         Response response =
         given()
                 .contentType("application/x-www-form-urlencoded; charset=UTF-8")

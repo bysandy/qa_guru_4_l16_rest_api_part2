@@ -10,6 +10,7 @@ repositories {
 
 ext.allureVersion = '2.13.8'
 ext.junitVersion = '5.7.1'
+ext.selenideVersion = '5.19.0'
 
 allure {
     version = allureVersion
@@ -23,6 +24,7 @@ allure {
 dependencies {
     testImplementation([
             'org.aspectj:aspectjweaver:1.9.6',
+            'com.codeborne:selenide:' + selenideVersion,
             'org.awaitility:awaitility:3.0.0',                       //Add possibility to test asynchronous systems
             'io.rest-assured:rest-assured:4.3.3',                    //REST API testing
             'io.qameta.allure:allure-java-commons:' + allureVersion, //allure reporting
