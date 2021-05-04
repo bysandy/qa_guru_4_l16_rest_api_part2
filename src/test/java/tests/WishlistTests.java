@@ -1,6 +1,7 @@
 package tests;
 
 import api.Auth;
+import config.ConfigHelper;
 import io.restassured.http.ContentType;
 import io.restassured.response.Response;
 import org.junit.jupiter.api.DisplayName;
@@ -58,7 +59,10 @@ public class WishlistTests extends TestBase{
     @Test
     @DisplayName("Add item to the Wishlist using cookie")
     void addedToWishlistWithCookieTest() {
-        Map<String, String> cookies = new Auth().login("rxzx6tdtgg@harakirimail.com", "!QAZ2wsx");
+        String Remail = ConfigHelper.getEmailUsername();
+        String Rpassword = ConfigHelper.getEmailPassword();
+
+        Map<String, String> cookies = new Auth().login(Remail, Rpassword);
         Response response =
                 given()
                         .contentType("application/x-www-form-urlencoded; charset=UTF-8")
