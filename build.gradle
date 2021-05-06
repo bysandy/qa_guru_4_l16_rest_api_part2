@@ -30,6 +30,7 @@ dependencies {
             'ch.qos.logback:logback-classic:1.2.3',
             'org.aeonbits.owner:owner:1.0.12',
             'org.hamcrest:hamcrest-all:1.3',
+            'com.googlecode.json-simple:json-simple:1.1',            //work with JSON
             'io.rest-assured:rest-assured:4.3.3',                    //REST API testing
             'io.qameta.allure:allure-java-commons:' + allureVersion, //allure reporting
             'io.qameta.allure:allure-rest-assured:' + allureVersion, //allure listener
