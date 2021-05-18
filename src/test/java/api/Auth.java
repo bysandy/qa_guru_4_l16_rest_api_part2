@@ -4,6 +4,7 @@ import config.ConfigHelper;
 
 import java.util.Map;
 
+import static io.restassured.RestAssured.filters;
 import static io.restassured.RestAssured.given;
 
 public class Auth {
@@ -22,6 +23,18 @@ public class Auth {
                         .statusCode(302)
                         .log().body()
                         //        .body("success", is(true))
+                        .extract().cookies();
+    }
+
+    public Map<String, String> getAnonymousCookies() {
+        return
+                given()
+                        .contentType("application/x-www-form-urlencoded; charset=UTF-8")
+                        .when()
+                        .get("/wishlist")
+                        .then()
+                        .statusCode(200)
+                        .log().body()
                         .extract().cookies();
     }
 }
